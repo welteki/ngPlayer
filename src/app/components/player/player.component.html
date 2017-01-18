@@ -1,0 +1,30 @@
+<div class="wrapper">
+<button class="btn"
+  (click)="previous.emit(null)"
+>
+  <i class="fa fa-backward" aria-hidden="true">
+  </i>
+</button>
+<div class="btn-group">
+  <button class="btn"
+    (click)="togglePlay()"
+  >
+    <i class = "fa" aria-hidden="true"
+      [ngClass]="{'fa-play': !isPlaying, 'fa-pause': isPlaying}"
+      >
+    </i>
+  </button>
+  <button class="btn"
+    (click)="stop.emit(null)"
+  >
+    <i class="fa fa-stop" aria-hidden="true">
+    </i>
+  </button>
+</div>
+<button class="btn"
+  (click)="next.emit(null)"
+>
+  <i class="fa fa-forward" aria-hidden="true">
+  </i>
+</button>
+</div>

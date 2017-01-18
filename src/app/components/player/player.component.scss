@@ -1,0 +1,61 @@
+$player-width: 284px;
+
+$btn-color: orange;
+$btn-size: 60px;
+$font-size: $btn-size * 40/100;
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: $player-width;
+}
+
+.btn-group {
+  color: $btn-color;
+  border-color: $btn-color;
+
+  .btn {
+    color: inherit;
+    border-color: inherit;
+    border-radius: 0;
+    border-right-color: transparent;
+    border-left-color: transparent;
+
+    &:first-child {
+      border-left-color: inherit;
+    }
+
+    &:last-child {
+      border-right-color: inherit;
+    }
+
+    &:hover {
+      border-right-color: inherit;
+      border-left-color: inherit;
+    }
+  }
+}
+
+.btn {
+  height: $btn-size;
+  width: $btn-size;
+  background-color: transparent;
+  color: $btn-color;
+  border-color: $btn-color;
+  border-radius: $btn-size/2;
+  font-size: $font-size;
+  // transition: border-width cubic-bezier(0.4, 0, 0.2, 1);
+  // transition-delay: 0.2s;
+
+  &:hover {
+    box-shadow:0 0 0 1px $btn-color;
+  }
+
+  &:focus:hover {
+    box-shadow:0 0 0 1px $btn-color;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}

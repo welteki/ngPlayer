@@ -1,0 +1,19 @@
+<div class="playlist"
+  [ngClass]="{'open': menuOpen}"
+>
+  <div class="heading">
+    PLAYLIST
+  </div>
+  <ul>
+    <li
+      *ngFor="let track of tracks"
+      (click)="selectTrack.emit(track)"
+    >
+      <img class="rounded" [src]="track.cover_small">
+      <div class="info">
+        <div class="track">{{track.title}}</div>
+        <div class="artist">{{track.artist}}</div>
+      </div>
+    </li>
+  </ul>
+</div>

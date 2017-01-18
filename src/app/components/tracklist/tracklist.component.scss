@@ -1,0 +1,70 @@
+$bg-color: white;
+
+.playlist {
+  position: absolute;
+  top: 0px;
+  width: 27em;
+  height: 100%;
+  left: -30em;
+  overflow-y: scroll;
+  transition: left 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  z-index: 10;
+  background-color: $bg-color;
+  padding-top: 15px;
+  padding-left: 17px;
+  padding-right: 17px;
+
+  &.open {
+    left: 0em;
+  }
+}
+
+.heading {
+  padding-bottom: 7px;
+  border-bottom: solid 1px;
+  border-bottom-color: grey;
+}
+
+li {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  &:first-child {
+    margin-top: 17px;
+  }
+
+  &:hover {
+    background-color: lightgrey;
+    border-radius: 0.25rem;
+  }
+
+  img {
+    height: 65px;
+  }
+}
+
+.info {
+  width: 17em;
+  padding-left: 15px;
+}
+
+.track {
+  width: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+}
+.artist {
+  width: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}

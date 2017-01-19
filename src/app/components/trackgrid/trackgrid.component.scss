@@ -1,0 +1,75 @@
+$cover-size: 295px;
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-left: 37px;
+}
+
+.cover-art {
+  position: relative;
+  height: $cover-size;
+
+  &:hover {
+    .btn {
+      visibility: visible;
+    }
+  }
+}
+
+.btn {
+  position: absolute;
+  top: $cover-size/2-30px;
+  left: $cover-size/2-30px;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border-radius: 30px;
+  border-color: orange;
+  color: orange;
+  border-width: 3px;
+  font-size: 20px;
+  padding-left: 20px;
+  visibility: hidden;
+}
+
+.track {
+  position: absolute;
+  left: 0;
+  bottom: 57px;
+  display: inline-block;
+  max-width: 87%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+  background: rgba(0,0,0,0.7);
+}
+
+.artist {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  display: inline-block;
+  max-width: 67%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+  background: rgba(0,0,0,0.7);
+}
+
+img {
+  height: inherit;
+}

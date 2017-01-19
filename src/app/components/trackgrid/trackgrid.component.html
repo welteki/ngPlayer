@@ -1,0 +1,14 @@
+<ul>
+  <li
+    *ngFor="let track of tracks"
+  >
+    <div class="cover-art">
+      <img [src]="track.cover_medium">
+      <button class="btn btn-outline-primary">
+        <i class="fa fa-play"></i>
+      </button>
+      <div class="track">{{track.title}}</div>
+      <div class="artist">{{track.artist}}</div>
+    </div>
+  </li>
+</ul>

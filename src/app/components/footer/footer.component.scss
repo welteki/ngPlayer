@@ -1,0 +1,23 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  background-color: grey;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+a {
+  color: lightgrey;
+  font-size: 12px;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+img {
+  height: 22px;
+  padding-left: 14px;
+}

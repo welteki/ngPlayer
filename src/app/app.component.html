@@ -1,3 +1,36 @@
-<h1>
-  {{title}}
-</h1>
+<div class="topbar">
+  <button class="btn"
+    (click)="togglePlaylist()"
+  >
+    <i class="fa fa-bars"></i>
+  </button>
+  <a class="github" href="#"><span>View on GitHub</span><i class="fa fa-github" aria-hidden="true"></i></a>
+</div>
+
+<div class="overlay"
+  [ngClass]="{'open': menuOpen}"
+  (click)="togglePlaylist()"
+>
+</div>
+
+<tracklist
+  [tracks]="tracks"
+  [menuOpen]="menuOpen"
+  (selectTrack)="selectTrack($event)"
+>
+</tracklist>
+
+<trackgrid
+  [tracks]="tracks"
+>
+</trackgrid>
+
+<player class="center"
+  [isPlaying]="isPlaying"
+  (play)="playTrack($event)"
+  (pause)="pauseTrack($event)"
+  (stop)="stopTrack($event)"
+>
+</player>
+
+<app-footer></app-footer>

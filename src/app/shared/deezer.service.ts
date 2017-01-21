@@ -36,7 +36,8 @@ function toTrack(r:any): Track{
     artist: r.artist.name,
     preview: r.preview,
     cover_small: r.album.cover_small,
-    cover_medium: r.album.cover_medium
+    cover_medium: r.album.cover_medium,
+    isPlaying: false
   })
   console.log('Parsed track:', track);
   return track;

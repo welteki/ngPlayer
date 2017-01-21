@@ -5,4 +5,5 @@ export class Track {
   preview: string;
   cover_small: string;
   cover_medium: string;
+  isPlaying: boolean;
 }

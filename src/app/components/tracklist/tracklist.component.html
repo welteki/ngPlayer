@@ -14,6 +14,11 @@
         <div class="track">{{track.title}}</div>
         <div class="artist">{{track.artist}}</div>
       </div>
+      <div class="placeholder"
+        *ngIf="track.isPlaying"
+      >
+        <i class="equalizer" aria-hidden="true"></i>
+      </div>
     </li>
   </ul>
 </div>

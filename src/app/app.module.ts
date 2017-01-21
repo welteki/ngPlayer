@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { DeezerService } from './shared/deezer.service';
 import { PlayerService } from './shared/player.service';
@@ -23,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    JsonpModule
   ],
   providers: [DeezerService,PlayerService],
   bootstrap: [AppComponent]

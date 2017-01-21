@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Jsonp, Response } from '@angular/http';
 
 import { Track } from './models/track';
 import { Observable }     from 'rxjs/rx';
 
 @Injectable()
 export class DeezerService {
-  private baseUrl = 'https://api.deezer.com' //URL to deezer API
+  private baseUrl = 'https://api.deezer.com/chart?output=jsonp&callback=JSONP_CALLBACK' //URL to deezer API
 
-  constructor(private http: Http) { }
+
+  constructor(private jsonp: Jsonp) { }
 
   getChart(): Observable<Track[]> {
-    let tracks = this.http
+    let tracks = this.jsonp
       .get(this.baseUrl)
       .map(mapTracks);
     return tracks;
   }
+
+ //  private extractData(res: Response) {
+ //   let body = res.json();
+ //   return body.tracks.data || { };
+ // }
 
 }
 

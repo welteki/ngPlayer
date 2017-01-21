@@ -1,10 +1,15 @@
 $cover-size: 295px;
 
 ul {
+  position: absolute;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
   padding-left: 0;
+  height: 100%;
+  overflow: scroll;
+  z-index: 10;
 }
 
 li {

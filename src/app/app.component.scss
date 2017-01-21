@@ -1,3 +1,31 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex-grow: 2;
+  display: flex;
+}
+
+.menu {
+  position: relative;
+}
+
+.display-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+
+.grid-wrapper {
+  flex-grow: 2;
+  position: relative;
+}
+
 .overlay {
   position: absolute;
   visibility: hidden;
@@ -8,6 +36,7 @@
   opacity: 0;
   transition: all 0.3s ease-in-out;
   z-index: 50;
+  overflow: hidden;
 
   &.open {
     visibility: visible;
@@ -18,7 +47,18 @@
 .topbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 50px;
   padding-right: 34px;
+  background-color: inherit;
+
+    .btn {
+      background-color: inherit;
+
+      &:hover {
+        color: orange;
+      }
+    }
 }
 
 .github {
@@ -34,4 +74,29 @@
     padding-right: 5px;
     font-size: 14px;
   }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  background-color: grey;
+  padding-left: 45px;
+  padding-right: 45px;
+
+  a {
+    color: lightgrey;
+    font-size: 12px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  img {
+    height: 22px;
+    padding-left: 14px;
+  }
+
 }

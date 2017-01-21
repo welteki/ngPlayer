@@ -1,36 +1,50 @@
-<div class="topbar">
-  <button class="btn"
-    (click)="togglePlaylist()"
-  >
-    <i class="fa fa-bars"></i>
-  </button>
-  <a class="github" href="#"><span>View on GitHub</span><i class="fa fa-github" aria-hidden="true"></i></a>
-</div>
-
 <div class="overlay"
   [ngClass]="{'open': menuOpen}"
   (click)="togglePlaylist()"
 >
 </div>
 
-<tracklist
-  [tracks]="tracks"
-  [menuOpen]="menuOpen"
-  (selectTrack)="selectTrack($event)"
->
-</tracklist>
+<div class="page-content">
+  <div class="menu">
+    <tracklist
+      [tracks]="tracks"
+      [menuOpen]="menuOpen"
+      (selectTrack)="selectTrack($event)"
+    >
+    </tracklist>
+  </div>
 
-<trackgrid
-  [tracks]="tracks"
->
-</trackgrid>
+  <div class="display-area">
+    <div class="topbar">
+      <button class="btn"
+        (click)="togglePlaylist()"
+      >
+        <i class="fa fa-bars"></i>
+      </button>
+      <a class="github" href="#"><span>View on GitHub</span><i class="fa fa-github" aria-hidden="true"></i></a>
+    </div>
 
-<player class="center"
-  [isPlaying]="isPlaying"
-  (play)="playTrack($event)"
-  (pause)="pauseTrack($event)"
-  (stop)="stopTrack($event)"
->
-</player>
+    <div class="grid-wrapper">
+      <trackgrid
+        [tracks]="tracks"
+      >
+      </trackgrid>
+    </div>
 
-<app-footer></app-footer>
+    <!-- <player class="center"
+      [isPlaying]="isPlaying"
+      (play)="playTrack($event)"
+      (pause)="pauseTrack($event)"
+      (stop)="stopTrack($event)"
+    >
+    </player> -->
+  </div>
+</div>
+
+<footer>
+  <a href="https://welteki.com">Created by <span>Han Verstraete</span></a>
+  <a href="https://www.deezer.com">
+    Powered by
+    <img src="assets/deezer.png">
+  </a>
+</footer>

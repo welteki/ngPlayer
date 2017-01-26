@@ -51,16 +51,16 @@ export class PlayerService {
     let index = this.index + 1;
     if(index < this.playList.length) {
       this.playNew(index);
+      this.index = index;
     }
-    this.index = index;
   }
 
   playPrevious() {
     let index = this.index - 1;
     if(index >= 0) {
       this.playNew(index);
+      this.index = index;
     }
-    this.index = index;
   }
 
   stop() {

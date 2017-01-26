@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
 
   stop() {
     if(this.isPlaying) {
-        this.playerService.pause();
+        this.playerService.stop();
     }
   }
 

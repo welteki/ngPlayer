@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Howl } from 'howler';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import './rxjs-operators';
 
 import { DeezerService} from './shared/deezer.service';
 import { PlayerService} from './shared/player.service';
+
 import { Track } from './shared/models/track';
 
 @Component({
@@ -13,38 +13,67 @@ import { Track } from './shared/models/track';
 })
 export class AppComponent implements OnInit {
   tracks: Array<any>;
-  selectedTrack: Track;
+  index:number; // keep track of index;
   menuOpen: boolean = false;
   isPlaying: boolean = false;
 
-  constructor(private deezerService: DeezerService, private playerService: PlayerService){}
 
-  ngOnInit() {
-    this.deezerService.getChart()
-                      .subscribe(tracks => this.tracks = tracks);
-  }
+  constructor(private deezerService: DeezerService, private playerService: PlayerService) { }
 
   togglePlaylist():void {
     this.menuOpen = !this.menuOpen
   }
 
-//   selectTrack(track: Track): void {
-//     this.selectedTrack = track;
-//     this.playerService.init(track.preview);
-//   }
-//
-//   playTrack(playing):void {
-//     this.playerService.play();
-//     this.isPlaying = playing;
-//   }
-//
-//   pauseTrack(playing):void {
-//     this.playerService.pause();
-//     this.isPlaying = playing;
-//   }
-//
-//   stopTrack(playing):void {
-//     this.playerService.stop();
-//     this.isPlaying = playing;
-//   }
+  ngOnInit() {
+    this.deezerService.getChart()
+                      .subscribe(tracks => this.getTracks(tracks));
+    let event = this.playerService.playerEvents;
+    event.onEnd$
+         .subscribe(event$ => this.onEnd());
+    event.playing$
+         .subscribe(event$ => this.playing(event$));
+  }
+
+  getTracks(tracks):void {
+    this.tracks = tracks;
+    this.playerService.init(tracks);
+  }
+
+  selectTrack(i):void {
+    this.playerService.playNew(i);
+    this.index = i;
+  }
+
+  play() {
+    this.playerService.play();
+  }
+
+  pause() {
+    this.playerService.pause();
+  }
+
+  stop() {
+    if(this.isPlaying) {
+        this.playerService.pause();
+    }
+  }
+
+  next() {
+    this.playerService.playNext();
+  }
+
+  previous() {
+    this.playerService.playPrevious();
+  }
+
+  playing(playing) {
+    this.isPlaying = playing;
+    console.log('playing toggeled:', this.isPlaying);
+  }
+
+  onEnd() {
+    this.playerService.playNext();
+    this.index += 1;
+    // console.log('onEnd$ fired');
+  }
 }

@@ -10,5 +10,7 @@ import { Track } from '../../shared/models/track';
 export class TracklistComponent {
   @Input() tracks: Track[];
   @Input() menuOpen: boolean;
+  @Input() playing: boolean;
+  @Input() index: number;
   @Output() selectTrack = new EventEmitter();
 }

@@ -6,18 +6,19 @@
   </div>
   <ul>
     <li
-      *ngFor="let track of tracks"
-      (click)="selectTrack.emit(track)"
+      *ngFor="let track of tracks; let i = index"
+      (click)="selectTrack.emit(i)"
     >
       <img class="rounded" [src]="track.cover_small">
       <div class="info">
         <div class="track">{{track.title}}</div>
         <div class="artist">{{track.artist}}</div>
       </div>
-      <div class="placeholder"
-        *ngIf="track.isPlaying"
-      >
-        <i class="equalizer" aria-hidden="true"></i>
+      <div class="placeholder">
+        <i
+        [ngClass] = "{'equalizer': playing && i === index}"
+        >
+        </i>
       </div>
     </li>
   </ul>

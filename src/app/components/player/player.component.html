@@ -10,7 +10,7 @@
     (click)="togglePlay()"
   >
     <i class = "fa" aria-hidden="true"
-      [ngClass]="{'fa-play': !isPlaying, 'fa-pause': isPlaying}"
+      [ngClass]="{'fa-play': !playing, 'fa-pause': playing}"
       >
     </i>
   </button>

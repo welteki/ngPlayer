@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Jsonp, Response } from '@angular/http';
+import { Howl } from 'howler';
 
 import { Track } from './models/track';
 import { Observable }     from 'rxjs/rx';
@@ -37,8 +38,9 @@ function toTrack(r:any): Track{
     preview: r.preview,
     cover_small: r.album.cover_small,
     cover_medium: r.album.cover_medium,
-    isPlaying: false
+    playing: false,
+    active: false
   })
-  console.log('Parsed track:', track);
+  // console.log('Parsed track:', track);
   return track;
 }

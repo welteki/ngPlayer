@@ -9,6 +9,8 @@
     <tracklist
       [tracks]="tracks"
       [menuOpen]="menuOpen"
+      [playing]="isPlaying"
+      [index]="index"
       (selectTrack)="selectTrack($event)"
     >
     </tracklist>
@@ -31,13 +33,15 @@
       </trackgrid>
     </div>
 
-    <!-- <player class="center"
-      [isPlaying]="isPlaying"
-      (play)="playTrack($event)"
-      (pause)="pauseTrack($event)"
-      (stop)="stopTrack($event)"
+    <player class="center"
+      [playing]="isPlaying"
+      (play)="play()"
+      (pause)="pause()"
+      (stop)="stop()"
+      (next)="next()"
+      (previous)="previous"
     >
-    </player> -->
+    </player>
   </div>
 </div>
 

@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent {
-  @Input() isPlaying: boolean;
+  @Input() playing: boolean;
   @Output() play = new EventEmitter;
   @Output() pause = new EventEmitter;
   @Output() stop = new EventEmitter;
@@ -14,7 +14,7 @@ export class PlayerComponent {
   @Output() next = new EventEmitter;
 
   togglePlay():void {
-    if (this.isPlaying) {
+    if (this.playing) {
       this.pause.emit(null);
     } else {
       this.play.emit(null);

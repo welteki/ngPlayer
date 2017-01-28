@@ -1,6 +1,6 @@
 <ul>
   <li
-    *ngFor="let track of tracks"
+    *ngFor="let track of tracks; let i = index"
   >
     <div class="cover-art">
       <img [src]="track.cover_medium">

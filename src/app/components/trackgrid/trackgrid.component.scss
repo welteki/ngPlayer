@@ -1,29 +1,61 @@
 $cover-size: 295px;
 
-ul {
+:host {
   position: absolute;
-  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding-left: 0;
+  justify-content: center;
   height: 100%;
+  width: 100%;
   overflow: scroll;
   z-index: 10;
 }
 
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 945px;
+  // background-color: lightblue;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+@media only screen and (max-width: 945px) {
+  ul {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ul {
+    width: 630px;
+  }
+}
+
 li {
-  margin-left: 37px;
+  margin: 10px;
 }
 
 .cover-art {
+  flex-grow: 1;
   position: relative;
-  height: $cover-size;
+  width: $cover-size;
 
   &:hover {
     .btn {
       visibility: visible;
     }
+  }
+}
+
+@media only screen and (max-width: 945px) {
+  .cover-art {
+    width: 246px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .cover-art {
+    width: $cover-size;
   }
 }
 
@@ -76,5 +108,5 @@ li {
 }
 
 img {
-  height: inherit;
+  width: 100%;
 }

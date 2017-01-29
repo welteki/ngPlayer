@@ -2,7 +2,9 @@
   <li
     *ngFor="let track of tracks; let i = index"
   >
-    <div class="cover-art">
+    <div class="cover-art"
+    (click)="selectTrack.emit(i)"
+    >
       <img [src]="track.cover_medium">
       <button class="btn btn-outline-primary">
         <i class="fa fa-play"></i>

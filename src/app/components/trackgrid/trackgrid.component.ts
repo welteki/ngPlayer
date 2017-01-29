@@ -8,5 +8,6 @@ import { Track } from '../../shared/models/track';
   styleUrls: ['./trackgrid.component.scss']
 })
 export class TrackgridComponent {
-  @Input() tracks: Track[]
+  @Input() tracks: Track[];
+  @Output() selectTrack = new EventEmitter();
 }

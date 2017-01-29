@@ -29,6 +29,7 @@
     <div class="grid-wrapper">
       <trackgrid
         [tracks]="tracks"
+        (selectTrack)="selectTrack($event)"
       >
       </trackgrid>
     </div>

@@ -1,13 +1,27 @@
-$player-width: 284px;
+$player-width: 248px;
+$half-width: $player-width / 2;
 
 $btn-color: orange;
-$btn-size: 60px;
-$font-size: $btn-size * 40/100;
+$btn-size: 47px;
+$font-size: $btn-size * 35/100;
+
+:host {
+  position: absolute;
+  left: calc(50% - 124px);
+  bottom: 80px;
+  z-index: 40;
+}
 
 .wrapper {
   display: flex;
   justify-content: space-between;
   width: $player-width;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 17px;
+  padding-left: 17px;
 }
 
 .btn-group {

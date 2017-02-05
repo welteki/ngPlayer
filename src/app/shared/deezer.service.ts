@@ -7,7 +7,7 @@ import { Observable }     from 'rxjs/rx';
 
 @Injectable()
 export class DeezerService {
-  private baseUrl = 'https://api.deezer.com/chart?output=jsonp&callback=JSONP_CALLBACK' //URL to deezer API
+  private baseUrl = 'https://api.deezer.com/playlist/1266968331?output=jsonp&callback=JSONP_CALLBACK' //URL to deezer API
 
 
   constructor(private jsonp: Jsonp) { }

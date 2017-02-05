@@ -1,31 +1,19 @@
-# NgPlayer
+## ngPlayer
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+ngPLayer is a simple music player application built with Angular 2. You can discover the top 100 most popular songs of the moment. (currently only the Belgian top)
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+note: this app is still a work in progress. I was to impatient to finish the work to a descent level before launching the first version, so this is what you get for now :smiley:
 
-## Code scaffolding
+[Discover music](https://ngplayer.welteki.com)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+## Overview
 
-## Build
+ngPlayer was created as an experiment to learn and explore angular 2. The app uses the Deezer API to retrieve playlists and track data (thanks [Deezer!](https://www.deezer.com)). For audio playback we rely on the [Howler.js](https://howlerjs.com/) audio library. [Angular-CLI](https://github.com/angular/angular-cli) was used to scaffold and build the project.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+The app is still pretty basic right now. There is no exception handling, no mobile layout ... but i will continue building as I find some time. On top of the todo list is implementing [@ngrx/store](https://github.com/ngrx/store) for a more efficient application state management so the app can be expanded more easily.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## License
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[MIT](../blob/master/LICENSE)

@@ -14,7 +14,6 @@ ul {
   display: flex;
   flex-wrap: wrap;
   width: 945px;
-  // background-color: lightblue;
   list-style-type: none;
   padding-left: 0;
 }
@@ -33,12 +32,18 @@ ul {
 
 li {
   margin: 10px;
+
+  &:last-child {
+    margin-bottom: 200px;
+  }
 }
 
 .cover-art {
   flex-grow: 1;
   position: relative;
   width: $cover-size;
+  height: $cover-size;
+  background-color: lightgrey;
 
   &:hover {
     .btn {
@@ -50,6 +55,7 @@ li {
 @media only screen and (max-width: 945px) {
   .cover-art {
     width: 246px;
+    height: 246px;
   }
 }
 
@@ -61,8 +67,8 @@ li {
 
 .btn {
   position: absolute;
-  top: $cover-size/2-30px;
-  left: $cover-size/2-30px;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
   width: 60px;
   height: 60px;
   background-color: transparent;

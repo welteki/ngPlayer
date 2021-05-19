@@ -12,6 +12,7 @@ ngPlayer was created as an experiment to learn and explore angular 2. The app us
 
 The app is still pretty basic right now. There is no exception handling, no mobile layout ... but i will continue building as I find some time. On top of the todo list is implementing [@ngrx/store](https://github.com/ngrx/store) for a more efficient application state management so the app can be expanded more easily.
 
+![](ngplayer_640.gif)
 
 
 ## License
